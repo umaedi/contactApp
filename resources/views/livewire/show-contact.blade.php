@@ -42,7 +42,7 @@
                 <td>{{ $contact->phone }}</td>
                 <td>
                     <button wire:click="getContact({{ $contact->id }})" class="btn btn-sm btn-warning">Edit</button>
-                    <button wire:click="destory({{ $contact->id }})" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure ?')">Delete</button>
+                    <button wire:click="destory({{ $contact->id }})" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure ?') || event.stopImmediatePropagation()">Delete</button>
                 </td>
               </tr>
             @endforeach

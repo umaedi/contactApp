@@ -43,8 +43,8 @@ class ShowContact extends Component
 
     public function destory($id)
     {
-        $data = Contact::findOrfail($id);
-        $data->destroy($id);
-        session()->flash('msg', 'Contact has deleted');
+        $contact = Contact::findOrfail($id);
+        $contact->destroy($id);
+        session()->flash('msg', 'Contact was deleted');
     }
 }
