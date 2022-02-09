@@ -41,10 +41,10 @@ class ShowContact extends Component
         $this->emit('getContact', $contact);
     }
 
-    public function destory($id)
+    public function destroy($id)
     {
         $contact = Contact::findOrfail($id);
-        $contact->destroy($id);
+        $contact->delete($id);
         session()->flash('msg', 'Contact was deleted');
     }
 }
